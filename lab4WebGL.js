@@ -7,6 +7,16 @@ let pointsArray = [];
 let normalsArray = [];
 
 let theta = 0;
+let index = 0;
+
+let colors = [
+    vec3(1.0, 0.0, 0.0),
+    vec3(0.0, 1.0, 0.0),
+    vec3(0.0, 0.0, 1.0),
+    vec3(1.0, 1.0, 0.0),
+    vec3(0.75, 0.0, 1.0),
+    vec3(0.0, 1.0, 1.0)
+]
 
 let modelViewLoc;
 let projectionLoc;
@@ -190,6 +200,9 @@ function render()
     );
 
     theta += 1.0;
+    if (theta % 30 == 0) {
+        index = (index + 1) % colors.length;
+    }
 
     let modelView =
         mult(
@@ -224,12 +237,9 @@ function render()
         flatten(vec3(x,1.0,z))
     );
 
-    let r = Math.abs(Math.sin(theta * 0.02));
-    let g = Math.abs(Math.sin(theta * 0.03));
-    let b = Math.abs(Math.sin(theta * 0.04));
     gl.uniform3fv(
         lightColorLoc,
-        flatten(vec3(r,g,b))
+        flatten(colors[index])
     );
 
     gl.drawArrays(
