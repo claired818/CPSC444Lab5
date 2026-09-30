@@ -1,0 +1,16 @@
+1. What is ambient lighting?
+      Ambient lighting is the general lighting that hits all shapes.
+2. What is diffuse lighting?
+      Diffues lighting is directional lighting. It hits certain faces of the shapes and is affected by distance.
+3. Why do we need normal vectors?
+      We need normal vectors to be able to see the lighting. If the vectors aren't normal the inside of the object gets light, not the visible outside.
+4. What role does the dot product play in lighting calculations?
+      It is used in the calculation of light color.
+5. How does changing light direction affect a 3D object?
+      Changing the light direction changes which planes of the shape get diffuse lighting.
+6. How does changing light color affect realism?
+      Changing the light color affects realism by allowing showing highlights to simulate things like spotlights.
+7. Which modification produced the most interesting result?
+      The modification that produced the most intersting results in my opinion was the color changeing.
+8. Why do game engines automate lighting calculations?
+      They automate lighting calculations to make lighting more user-friendly so those who don't know the calculations can still implement lighting.
